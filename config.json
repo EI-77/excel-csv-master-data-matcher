@@ -1,0 +1,61 @@
+{
+  "order_file": "sample_orders.xlsx",
+  "master_file": "product_master.xlsx",
+  "enriched_file": "enriched_orders.xlsx",
+  "unmatched_file": "unmatched_orders.xlsx",
+  "summary_file": "match_summary.xlsx",
+  "order_key": "product_code",
+  "master_key": "product_code",
+  "order_required_columns": [
+    "order_id",
+    "order_date",
+    "product_code",
+    "quantity"
+  ],
+  "master_required_columns": [
+    "product_code",
+    "product_name",
+    "category",
+    "standard_price"
+  ],
+  "master_value_columns": [
+    "product_name",
+    "category",
+    "standard_price"
+  ],
+  "order_numeric_columns": [
+    "quantity"
+  ],
+  "master_numeric_columns": [
+    "standard_price"
+  ],
+  "order_date_columns": [
+    "order_date"
+  ],
+  "date_format": "%Y-%m-%d",
+  "amount_calculation": {
+    "enabled": true,
+    "quantity_column": "quantity",
+    "price_column": "standard_price",
+    "output_column": "expected_amount"
+  },
+  "enriched_output_columns": [
+    "order_id",
+    "order_date",
+    "product_code",
+    "product_name",
+    "category",
+    "quantity",
+    "standard_price",
+    "expected_amount"
+  ],
+  "unmatched_output_columns": [
+    "row_number",
+    "order_id",
+    "order_date",
+    "product_code",
+    "quantity",
+    "error_type",
+    "error_message"
+  ]
+}
